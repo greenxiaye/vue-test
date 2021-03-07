@@ -1,16 +1,13 @@
 <template>
   <div>
-    <form @submit.prevent="addToPage">
-      <div>{{ name }}</div>
-      <div>{{ data.name }}</div>
-      <input v-model="data.word" />
-      <button>I am a button</button>
-    </form>
-    <ul>
-      <li v-for="(w, index) in data.words" :key="index">
-        <h1>{{ w }}</h1>
-      </li>
-    </ul>
+    <div>hhhh</div>
+    <router-link to="/">主页</router-link>
+    <router-link to="/home" tag="li" replace active-class="active"
+      >首页</router-link
+    >
+    <router-link to="/about" tag="li" replace>关于</router-link>
+    <!-- 相当于一个占位 -->
+    <router-view></router-view>
   </div>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
@@ -18,20 +15,9 @@
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import { reactive } from 'vue';
+
 export default {
-  name: 'App',
-  setup() {
-    const data = reactive({ name: '', word: '', words: [] });
-    let name = 'hello';
-    function addToPage() {
-      console.log('submit');
-      name = 'Hello word';
-      data.name = 'start';
-      data.words.push(data.word);
-    }
-    return { name, addToPage, data };
-  }
+  name: 'App'
 };
 </script>
 
@@ -43,5 +29,11 @@ export default {
   /* text-align: center;
   color: #2c3e50;
   margin-top: 60px; */
+}
+.router-link-active {
+  color: red;
+}
+.active {
+  color: pink;
 }
 </style>
