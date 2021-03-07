@@ -5,6 +5,11 @@
     <router-link to="/about/aboutSome">关于</router-link>
     <!-- 注意这边是动态的拼接 而不是拼接字符串 所以:to -->
     <router-link :to="'/user/' + userId">用户</router-link>
+    <!-- 必须加入v-bind: 才能解析to后面的为一个对象 -->
+    <router-link
+      :to="{ path: '/profile', query: { name: 'why', age: 18, height: 1.65 } }"
+      >我的</router-link
+    >
     <!-- <button @click="homeClick">首页</button>
     <button @click="aboutClick">关于</button> -->
     <!-- 相当于一个占位 -->

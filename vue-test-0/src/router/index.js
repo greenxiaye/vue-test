@@ -9,6 +9,7 @@ const About = () => import('../components/About')
 const User = () => import('../components/User')
 const HomeNews = () => import('../components/HomeNews')
 const HomeMessage = () => import('../components/HomeMessage')
+const Profile = () => import('../components/Profile')
 // 路由数组
 const routes = [
     { path: '', redirect: '/home' }, //    { path: '', redirect: '/home' },
@@ -32,6 +33,7 @@ const routes = [
     },
     { path: '/about/:aboutId', component: About },
     { path: '/user/:abc', component: User },
+    { path: "/profile", component: Profile }
 ]
 
 const router = createRouter({
