@@ -1,5 +1,7 @@
 <template>
-  <div>news</div>
+  <div>
+    <div>试canvas</div>
+  </div>
 </template>
 
 <script>
